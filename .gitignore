@@ -1,0 +1,42 @@
+import random
+import time
+
+def 遊戲介紹():
+    print('您在全龍之地。在你面前,')
+    print('你看到兩個洞。在一個山洞裡，龍是友好的')
+    print('並且將與您分享他的財富。其他的龍')
+    print('是貪婪和飢餓，並會吃了你.')
+    print()
+
+def 選擇巢穴():
+    cave = ''
+    while cave != '1' and cave != '2':
+        print('哪個洞穴你會進入? (1 or 2)')
+        cave = input()
+
+    return cave
+
+def checkCave(chosenCave):
+    print('你正接近洞穴')
+    time.sleep(2)
+    print('它很黑暗和怪異...')
+    time.sleep(2)
+    print('大龍跳出在你的面前！他打開他的下巴和...')
+    print()
+    time.sleep(2)
+
+    friendlyCave = random.randint(1, 2)
+
+    if chosenCave == str(friendlyCave):
+         print('給你他的寶藏!')
+    else:
+         print('吞了你!')
+
+playAgain = 'yes'
+while playAgain == 'yes' or playAgain == 'y':
+
+    遊戲介紹()
+
+    caveNumber = 選擇巢穴()
+
+    checkCave(caveNumber)
